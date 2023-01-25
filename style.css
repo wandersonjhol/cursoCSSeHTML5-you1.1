@@ -1,0 +1,602 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Augustus';
+    src: url('webfontes/AUGUSTUS.TTF') format('truetype');/*É boazinha*/
+}
+@font-face {
+    font-family: 'Bohemian';
+    src: url('webfontes/Bohemian\ Soul.otf') format('opentype');/*É boazinha*/
+}
+@font-face {
+    font-family: 'NewYork';
+    src: url('webfontes/NewYork\ PERSONAL\ USE.otf') format('opentype'); /*TOP TOP*/
+}
+/* RESET 
+______________________________________________________*/
+*, *:before, *:after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;/*Mantem o espaçamento e não deixa quebrar o Layout*/
+    -webkit-box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: inherit;
+}
+
+input, select, iframe, button {
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;/*Retira o sublinhado do texto.*/
+    color: inherit; transition: all .4s ease-in-out;/*Tira a cor azul das minhas palavras e coloca um efeito de transição nos meus links é muito legal pois faz a configuração em toda a minha página.*/
+}
+a:hover {
+    color: #f9014d;/*Coloca a cor das minhas palavras do ancorâ em vermelho quando passo o mouse por cima da palavra.*/
+}
+img{/*Esse código fez com que minha imagem ficasse responsiva.*/
+    max-width: 100%;/*Faz com que minha imagem se ajuste dentro do box.*/
+    border: none;
+}
+
+/*GERAIS
+____________________________________*/
+.section {
+    float: left;
+    width: 100%;
+}
+.section:not(:first-of-type){/*Esse código está dizendo que vai fazer a configuração abaixo em todas as sections de menos na primeira.*/
+    margin-top: 60px;
+}
+.section-header{/*Aqui eu configuro o texto do meu header do layout*/
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+.section-header h1{
+    font-size: 38px;
+    font-weight: normal;
+}
+
+div.content{
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.row{
+    float: left;
+    width: 100%;
+}
+
+/*loadmore configuração do botão.*/
+.loadmore{
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 17px;
+    cursor: pointer;/*Cria a mão quando passado o curso do mouse por cima.*/
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.loadmore:hover{
+    color: #a70606;
+    border: 1px solid #a70606;
+
+}
+
+/*BOX
+____________________________________*/
+
+.box{
+    display: block;
+    position: relative;
+    overflow: hidden;/*Faz com que toda a configuração da minha imagem acompanhe a configuração do meu box.*/
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.box-name{
+    position: absolute;
+    z-index: 2;/*Faz com que ele fique acima*/
+    left: 10px;
+    top: 10px;
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 10px;
+    background: #f9014d;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.box-cover{
+    font-size: 0;
+    line-height: 1em;
+}
+.box-cover img{
+    width: 100%;/*Faz com que minha imagem fique dentro do box.*/
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);/*Faz o efeito de afundar quando passo o mouse na imagem, de primeiro momento não percebo mas a imagem da uma aumentada dentro do box quando eu atualizo.*/
+    -webkit-transition: all 300ms ease-in-out;/*Faz o efeito da imagem ser mais sútil.*/
+    transition: all 300ms ease-in-out;
+}
+.box-detalhes{
+    position: absolute;/*vai fazer com que ele fique acima da imagem.*/
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 15px;
+}
+.box-detalhes:before{/*Cria a sombra.*/
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .8;
+    visibility: hidden;/*Deixa a sombra escondida.*/
+    background: linear-gradient(to bottom,transparent,#000);
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    -webkit-transform: translate(0,50%);
+    transform: translate(0,50%);
+}
+.box-detalhes-info{/*Aqui é feito a sombra que está sobre a imagem, para da um efeito mais elegante.*/
+    position: relative;
+    z-index: 2;
+    opacity: 0;/*Este opacity e o visibility abaixo faz com que o texto da minha imagem suma*/
+    visibility: hidden;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    -webkit-transform: translate(0,50%);
+    transform: translate(0,50%);
+}
+.box-detalhes-info h1{
+    font-size: 20px;
+}
+
+/*box:hover*/
+
+.box:hover .box-cover img{/*Esse código está fazendo o efeito de quando eu passar o mouse por cima da imagem ela sai da escala de 1.1 e volta para 1 causando o efeito de aumentar e diminuir.*/
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.box:hover .box-detalhes:before, 
+.box:hover .box-detalhes-info{/*Faz com que a imagem suba quando passado o mouse por cima dela.*/
+    opacity: 1;/*Este opacity e o visibility abaixo faz com que o texto da minha imagem apareça quando passado o mouse por cima.*/
+    visibility: visible;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+/*HEADER
+____________________________________*/
+.header {
+    position: fixed;/*Fixei a imagem na tela.*/
+    width: 100%;/*Minha imagem vai ocupar 100% do espaço dela.*/
+    padding-top: 30px;/*Afastei a imagem do top da página em 30px.*/
+    z-index: 6;
+    -webkit-transition: all .5s ease-in-out;/*Faz o efeito de transição no header.*/
+    transition: all .5s ease-in-out;
+}
+.header .logo img{/*Aqui estou configurando minha logo.*/
+    max-width: 80px;/*Configura o tamanho da minha logo.*/
+    border-radius: 5px;
+}
+.header.fixed{/*Aqui eu fixei o meu menu e o meu logo e também coloquei um background de fundo.*/
+    background: #2c3e50;
+    padding: 10px 0px 5px 0px;
+}
+
+/*SEARCH & ESTATISTICAS
+____________________________________*/
+.search-box {
+    color: white;
+    text-align: center;
+    padding: 100px 0px;/*Dei um espaço de 100px em cima e de 100px em baixo.*/
+    background-image: url('imagens/celeiro.jpg');
+}
+.search-box h1 {
+    font-size: 37px;
+    font-weight: bold;
+}
+.search-box .tagline{
+    font-size: 22px;
+}
+.search-box form{
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 40px;
+}
+.search-box form input[type="search"]{/*Configura o meu formulário.*/
+    width: 100%;
+    height: 50px;
+    font-size: inherit;/*Pega 16pixs do navegador.*/
+    color: #2c3e50;
+    padding: 0px 70px 0px 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.search-box form button{/*Configura o button(Botão de pesquisa).*/
+    background: #a70606;
+    position: absolute;/*faz com que ele fique em cima da lupa.*/
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    top: 0;
+    right: 0;
+    cursor: pointer;/*Faz com que o curso do mouse vire a luvinha em formato de mão.*/
+    -webkit-border-top-right-radius: 6px;
+    border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/*ESTATISTICAS
+____________________________________*/
+.estatisticas{
+    background: #fff;
+    max-width: 960px;
+    width: 90%;/*Esse width é para o mobile*/
+    padding: 30px 0;
+    margin: -40px auto 0px auto;
+    text-align: center;
+
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,.3);
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,.3);
+}
+.estatisticas-item span{
+    font-size: 33px;
+    font-weight: bold;
+}
+.estatisticas-item p{
+    font-size: 20px;
+}
+
+/*DESTINOS
+__________________________________*/
+.destinos-col{
+    margin-bottom: 20px;
+}
+
+/*PARALLAX
+__________________________________*/
+.parallax{
+    float: left;
+    width: 100%;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    padding: 160px 0px;/*Dei um espaço de 100px em cima e de 100px em baixo.*/
+    margin-top: 60px;
+    background-image: url('imagens/dji_0275.jpeg');
+}
+.parallax h1{ 
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+.parallax button{ 
+    font-size: 20px;
+    background: #f9014d;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+}
+.parallax button:hover{
+    background: #e92863
+}
+
+/*DESTAQUES
+____________________________________*/
+.destaques-col{
+    margin-bottom: 20px;
+}
+
+/*TESTEMUNHAS
+__________________________________*/
+.testemunhas{
+    padding: 60px 0px;/*Dei um espaço de 100px em cima e de 100px em baixo.*/
+    background-image: url('imagens/decoração\ Cerimonias.jpg');
+}
+.testemunhas-article{/*Configura a parte da caixa das testemunhas*/
+    float: left;
+    background: rgba(255, 255, 255, .7);
+    width: 100%;
+    font-size: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.testemunhas-article h1{
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 8px solid #ccc;/*Cria a barrinha do lado do texto da caixa das testemunhas.*/
+}
+.testemunhas-article .image{
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    width: 83px;
+    height: 83px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.testemunhas-article p{
+    display: flex;/*Centraliza o texto que está do lado da imagem.*/
+    flex-direction: column;
+    justify-content: center;
+    height: 83px;
+}
+.testemunhas-article .name{
+    color: #a70606;
+    font-weight: bold;
+}
+
+/*FOOTER
+__________________________________*/
+.footer{
+    background: #181818;
+    float: left;
+    width: 100%;
+    color: #fff;
+    padding: 30px 0px; /*Os 30px é referente a altura de baixo e de cima, o 0px é referente aos lados.*/
+}
+.footer-col{
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
+.footer-col h1{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* LINKS ÚTEIS */
+.footer-col-links li{
+    padding: 10px 0px;
+}
+.footer-col-links li:not(:last-of-type)  {/*Coloquei bordas brancas nos meus links. O last-of-type tira a borda da última linha.*/
+    border-bottom: 1px solid #fff;
+}
+
+/* REDES SOCIAIS*/
+.footer-col-social li .fab{
+    background: #000;
+    font-size: 20px;
+    margin-right: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    border-radius: 8px;
+}
+
+/* AUTORAIS*/
+.footer-autorais{
+    padding-top: 20px;
+    border-top: 1px solid #fff;
+    color: #ccc;
+}
+
+/*BREACKPOINTS MÁXIMOS
+____________________________________*/
+@media (max-width: 767.9px){ /*Esses estilos só vão ser aplicado até que o tamanho da minha tela chegue até 767.9px. IMPORTANTE: Este estilo só funciona para o tamanho mobile.*/
+
+    /*menu*/
+    .nav-toggle{/*Configura o texto MENU.*/
+        color: #fff;
+        font-size: 22px;
+    }
+    .nav-close{
+        font-size: 22px;
+    }
+    .header .nav.active{
+        right: 0;
+    }
+    .header .nav{/*Configura o fundo da minha LOGO.*/
+         background: #fff;
+         width: 250px;
+         height: 100%;   
+         position: fixed;
+         padding: 15px;
+         right: -100%;
+         top: 0;
+         z-index: 10;
+         transition: right .7s ease-in-out;/*Faz um efeito de transição na abertura do menu. top top!!*/
+    }
+    .header .nav ul li{
+        padding: 15px 5px;
+        font-size: 20px;
+        border-bottom: 1px solid #ccc; /*Coloquei uma linha(borda) abaixo de cada menu.*/
+    }
+
+    /*estatisticas*/
+    .estatisticas{
+        flex-direction: column;
+    }
+    .estatisticas-item{
+        min-width: 90%;
+    }
+    .estatisticas-item:not(:last-of-type){/*Apartir do código -> :not(:last-of-type) significa que eu estou pedindo que faça toda a configuração do bloco abaixo, mas que na ultima div da classe estatistica não é para fazer, sendo assim a linha e o espaço é retirado. A div é a do span de 15,000 */
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+/*BREACKPOINTS MINÍMOS
+____________________________________*/
+
+@media (min-width: 768px) {/*Aqui eu configurei as div da classe estatiscas-item para receber essas configuração para quando a tela ATINGIR o tamanho de 768 acima. Essa configuração é para o tamnho de computador.*/
+
+    /*MENU*/
+    .nav-toggle, .nav-close{/*Faz com que o meu menu desapareça da página principal, ele só aparece no mobile.*/
+        display: none;
+    }
+    .header .nav{/*Peguei o menu da tela grande e mandei para o lado direito. E afastei da borda de cima 20px.*/
+        float: right;
+        margin-top: 38px;
+    }
+    .header .nav ul li{/*Coloquei as palavras do menu lado a lado.*/
+        display: inline-block;
+        margin-left: 20px;
+    }
+    .header .nav ul li a{/*Cor de fundo das palavras do meu MENU.*/
+        color: #fff;
+    }
+    .header .nav ul li a:hover{/*Muda a cor do meu menu quando passo o mouse por cima.*/
+        color: #f9014d;
+
+    }
+
+    .search-box{
+        padding: 200px 0;/*Aumenta o tamanho do espaço da imagem do celeiro*/
+    }
+    .estatisticas{
+        margin-top: -65px;
+    }
+    .estatisticas-item{
+        text-align: center;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    .estatisticas-item:not(:last-of-type){
+        border-right: 1px solid #ccc;
+    }
+
+   /*Destinos-col*/
+    .destinos-col{
+        width: 49%;
+        margin-right: 2%;/*Espaçamento entre as minhas imagens*/
+        margin-bottom: 2%;/*Espaçamento entre as minhas imagens*/
+        float: left;
+    }
+    .destinos-col:nth-child(odd){
+        margin-right: 0;
+    }
+    .destinos-col:first-child{
+        width: 100%;/*É aqui que eu estou mudando o tamanho da minha primeira imagem.*/
+    }
+
+    /*DESTAQUES*/
+    .destaques-col{
+        width: 49%;
+        margin-right: 2%;
+        float: left;/*Faz uma imagem ficar do lado da outra.*/
+        margin-bottom: 2%;
+    }
+    .destaques-col:nth-of-type(2n+0){/*Fez minhas imagens ficarem lado a lado.*/
+        margin-right: 0;
+    }
+
+    /*TESTEMUNHAS*/
+    .testemunhas-article{
+        width: calc((100% - 8%) / 3 );
+        margin-right: 4%;
+        margin-bottom: 4%;
+    }
+    .testemunhas-article:last-of-type{
+        margin-right: 0;
+    }
+
+    /*FOOTER*/
+    .footer-col{
+        width: 45%;
+    }
+    .footer-col:nth-child(2){/*Estou configurando minha coluna dois.*/
+        width: 30%;
+        margin-left: 5%;
+    }
+    .footer-col:nth-child(3){/*Estou configurando minha coluna três.*/
+        width: 15%;
+        float: right;
+    }
+
+}
+
+/*@media (min-width: fghfghfghgfghpx){
+    .footer-col{
+        width: 45%;
+    }
+    .footer-col:nth-child(2){/*Estou configurando minha coluna dois.
+        width: 30%;
+        margin-left: 5%;
+    }
+    .footer-col:nth-child(3){/*Estou configurando minha coluna três.
+        width: 15%;
+        float: right;
+    }
+}*/
+
+@media (min-width: 900px){/*Quando o tamanho da página for menor que 900px vai fazer as configurações abaixo.*/
+    .destinos-col:nth-child(odd),
+    .destinos-col{
+        width: 48%;
+        margin-right: 2%;
+    }    
+    .destinos-col:nth-of-type(3n+2){
+        margin-right: 2%;
+    }
+    .destinos-col:first-child{
+        width: 66%;/*É aqui que eu estou mudando o tamanho da minha primeira imagem.*/
+    }
+}
+
+/* AUXILIARES
+____________________________________*/
+
+/* BG-FIXED, Fixa todas as minha imagens de parallax.*/
+.bg-fixed{
+    background-size: cover;/*Vai ajustar a minha imagem dentro do box.*/
+    background-position: center;/*Centralizei a imagem*/
+    background-attachment: fixed;/*Minha imagem vai ficar fixa ao rolar a página.*/
+    background-repeat: no-repeat;/*Não deixa que a imagem se repita se o box for maior.*/
+}
+
+/* TEXT ALIGN*/
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+
+.fl-left{float: left;}
+.fl-right{float: right;}
+
+/*Configurações extras que estou fazendo.
+________________________________________*/

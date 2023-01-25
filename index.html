@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso HTML5 e CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+
+<body>
+    <!-- START HAEDER -->
+    <header class="header">
+        <div class="content">
+            <div class="logo fl-left">
+                <a href="#">
+                    <img src="imagens/farm-logoR.jpeg" alt="celeiro">
+                </a>
+            </div>
+
+        <a href="#" class="nav-toggle fl-right"><!-- Aqui eu criei o menu -->
+            <span class="material-symbols-outlined">menu</span> MENU
+        </a>
+
+        <nav class="nav active"><!--Aqui fica os meus menus.-->
+            <p class="text-right">
+                <span class="nav-close">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </span>
+            </p>
+            <ul>
+                <li><a href="#">Fale-Conosco</a></li>
+                <li><a href="#">Destaques</a></li>
+                <li><a href="#">Testemunhas</a></li>
+            </ul>
+        </nav>
+    </div><!--Essa div vai envolver todo o conteúdo.-->
+</header>
+<!-- end /HAEDER -->
+
+<!-- START SEARCH E ESTATISTICAS -->
+<section class="section">
+    <div class="search-box bg-fixed">
+        <header>
+            <h1>Bougainville Farm</h1>
+            <p class="tagline">Realizando o casamento dos seus sonhos</p>
+        </header>
+
+
+        <form name="formSearch" method="post" action=""> 
+            <input type="search" name="busca" id="busca" placeholder="pesquisar"><!--Aqui eu criei o campo de busca.-->
+            <button type="submit"><!-- Aqui eu criei o icone, pequei ele do google fonts-->
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </form>
+    </div>
+    
+
+    <div class="estatisticas">
+        <div class="estatisticas-item"><!--Essa divi vai ser a minha coluna de 4 itens-->
+            <p>Casamentos</p>
+        </div>
+            <div class="estatisticas-item"><!--Essa divi vai ser a minha coluna de 4 itens-->
+               <p>Aniversários</p>
+            </div>
+                <div class="estatisticas-item"><!--Essa divi vai ser a minha coluna de 4 itens-->
+                    <p>Seção de fotos</p>
+                </div>
+                    <div class="estatisticas-item"><!--Essa divi vai ser a minha coluna de 4 itens-->
+                        <p>Airsoft</p>
+                    </div>
+        </div>
+    </div>
+</section>
+<!-- end  /SEARCH E ESTATISTICAS -->
+
+
+
+<!-- START DESTINOS-->
+<section class="section"><!--Aqui é o cabeçalho do layout da minha página, onde entra minhas imagens..-->
+    <div class="content">
+        <header class="section-header">
+            <h1>Escolha a decoração conforme o seu gosto</h1>
+            <p>Veja algumas de nossas fotos, e almeje o seu casamento.</p>
+        </header>
+
+        <div class="row"><!--Cada bloco de div dentro dessa div class row, vai ser uma coluna para levar uma imagem.-->
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Love
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/07__62_.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Love.</h2>
+                            <p>Foto tirado pelo lado de fora do celeiro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Celeiro
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/loveRE.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Love.</h2>
+                            <p>Seção de fotos pós casamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Cerimônia
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/casamento.jpeg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Local de Cerimônia.</h2>
+                            <p>A Cerimônia é realizada entre jabuticabeiras e de frente para um riacho de águas cristalinas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Local de Cerimônia
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/vistaDoTapete.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Cerimônia.</h2>
+                            <p>Olhando do ponto de vista dos noivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Local de Cerimônia
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/cerimoniVistaDoAltar.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Cerimônia</h2>
+                            <p>Olhando do altar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Cerimônia
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/cerimoniaDecoracao.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Todo detalhe importa.</h2>
+                            <p>Decoração um pouco mais rústica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Cerimônia
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/cerimoniVistaDoRiacho.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Cerimônia vista do riacho.</h2></h2>
+                            <p>E aí, te inspira?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Cerimônia
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/decoração Cerimonias.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Vista do portal.</h2>
+                            <p>A noiva entra por uma portal rústico de madeira.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destinos-col">
+                <div class="box">
+                    <div class="box-name">
+                        Músicos
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/aquila.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Espaço reserva para os músicos.</h2>
+                            <p>Contamos com um espaço reservado especialmente para os músicos na hora da recepção.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--start botão carregar mais-->
+        <div class="row">
+            <div class="content text-center">
+                <button class="loadmore">CARREGAR MAIS</button>
+            </div>
+        </div>
+        <!--end /carregar mais-->
+    </div>
+</section>
+<!-- END /DESTINOS-->
+
+<!-- start PARALLAX-->
+<div class="parallax bg-fixed">
+    <div class="content">
+        <h1>VENHA FAZER O SEU CASAMENTO CONOSCO</h1>
+        <p>Você sonhou, e nós vamos preparar o seu casamento conforme o seu sonho</p>
+        <button>SAIBA MAIS</button>
+    </div>
+</div>
+<!-- end /PARALLAX-->
+
+<!-- start DESTAQUE-->
+
+<section class="section">
+    <div class="content">
+        <header class="section-header">
+            <h1>Destaques</h1>
+            <p>Abaixo estão algumas de nossas decorações. Temos imagens de dentro do celeiro e de fora.</p>
+        </header>
+
+        <div class="row">
+            <div class="destaques-col">
+                <div class="box">
+                    <div class="box-name">
+                        Celeiro
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/casando-27.webp" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Recepção</h2>
+                            <p>Mesa para quatro convidados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destaques-col">
+                <div class="box">
+                    <div class="box-name">
+                        Recepção
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/casando-33.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Mesa reservada.</h2>
+                            <p>Está mesa fica dentro do celeiro reservada especialmente para os noivos e pais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destaques-col">
+                <div class="box">
+                    <div class="box-name">
+                        Reservada
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/dentroseleiroR.jpg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Mesa reservada</h2>
+                            <p>Uma segunda decoração para a mesa dos noivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destaques-col">
+                <div class="box">
+                    <div class="box-name">
+                        Mesa convidados
+                    </div>
+                    <div class="box-cover">
+                        <img src="imagens/mesa.jpeg" alt="">
+                    </div>
+                    <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                        <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                            <h2>Espaço por fora do celeiro.</h2>
+                            <p>Mesa para convidados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="destaques-col">
+            <div class="box">
+                <div class="box-name">
+                    Espaço para convidados
+                </div>
+                <div class="box-cover">
+                    <img src="imagens/recepcaoGramado.jpg" alt="">
+                </div>
+                <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                    <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                        <h2>Recepção</h2>
+                        <p>Contamos com um amplo espaço para recepção.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="destaques-col">
+        <div class="box">
+            <div class="box-name">
+                Recepção
+            </div>
+            <div class="box-cover">
+                <img src="imagens/mesas decoradas.jpeg" alt="">
+            </div>
+            <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                    <h2>Espaço para convidados</h2>
+                    <p>Uma segunda decoração.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="destaques-col">
+        <div class="box">
+            <div class="box-name">
+                Bolo
+            </div>
+            <div class="box-cover">
+                <img src="imagens/mesaDeDoces.jpg" alt="">
+            </div>
+            <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                    <h2>Decoração da mesa do bolo</h2>
+                    <p>Dentro do celeiro fica a mesa de doces e bolo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="destaques-col">
+        <div class="box">
+            <div class="box-name">
+                Doces
+            </div>
+            <div class="box-cover">
+                <img src="imagens/doces2.jpg" alt="">
+            </div>
+            <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                    <h2>Doces</h2>
+                    <p>Uma decoração rútica para os doces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="destaques-col">
+        <div class="box">
+            <div class="box-name">
+                Doces
+            </div>
+            <div class="box-cover">
+                <img src="imagens/doces.webp" alt="">
+            </div>
+            <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                    <h2>Humm...</h2>
+                    <p>Como foi dito, cada detalhe importa para nós.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="destaques-col">
+        <div class="box">
+            <div class="box-name">
+                Riacho
+            </div>
+            <div class="box-cover">
+                <img src="imagens/SapatosNoRiacho.jpg" alt="">
+            </div>
+            <div class="box-detalhes"><!--Aqui é onde vai gerar os efeitos ao passar o mouse por cima da minha imagem, é aqui também que vai da o efeito de sombra na minha imagem.-->
+                <div class="box-detalhes-info"><!--Aqui é a chave para gerar a conclusão do efeito em minha imagem.-->
+                    <h2>Foto tirada em um pós casamento</h2>
+                    <p>E aí, está esperando o que para se casar? Estamos aguardando vocês.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--start botão carregar mais-->
+        <div class="row">
+            <div class="content text-center">
+                <button class="loadmore">CARREGAR MAIS</button>
+            </div>
+        </div>
+        <!--end /carregar mais-->
+    </div>
+</section>
+ <!-- end DESTAQUE-->
+
+ <!-- start TESTEMUNHAS-->
+<section class="section testemunhas bg-fixed">
+    <div class="content">
+        <header class="section-header">
+            <h1>Testemunhas</h1>
+            <p>Diga o que você acha do local, deixe sua opinião isso é muito importante para nós.</p>
+        </header>
+
+        <article class="testemunhas-article">
+            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nemo obcaecati quo dicta odio pariatur.</h1>
+            <span class="image"><img src="imagens/euR.jpg" alt=""></span>
+            <p>
+                <span class="name">Wanderson Souza</span>
+                <span>Programador Full</span>
+            </p>
+        </article>
+
+        
+        <article class="testemunhas-article">
+            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nemo obcaecati quo dicta odio pariatur.</h1>
+            <span class="image"><img src="imagens/euR.jpg" alt=""></span>
+            <p>
+                <span class="name">Wanderson Souza</span>
+                <span>Programador Full</span>
+            </p>
+        </article>
+
+        
+        <article class="testemunhas-article">
+            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nam nemo obcaecati quo dicta odio pariatur.</h1>
+            <span class="image"><img src="imagens/euR.jpg" alt=""></span>
+            <p>
+                <span class="name">Wanderson Souza</span>
+                <span>Programador Full</span>
+            </p>
+        </article>
+    </div>
+</section>
+ <!-- end TESTEMUNHAS-->
+
+ <!-- start FOOTER-->
+<footer class="footer">
+<div class="content">
+    <div class="footer-col">
+        <h1>Sobre a Empresa</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, harum aperiam! Modi doloremque possimus expedita, ex nisi veniam, vel exercitationem quas assumenda id accusantium facilis veritatis sit laborum corrupti excepturi!</p>
+    </div>
+
+    <div class="footer-col">
+        <h1>Links úteis</h1>
+        <ul class="footer-col-links">
+            <li><a href="https://www.casamentos.com.br/sitio-casamento/bougainville-farm--e151931" target="_blank" >Site bougainville farm clique aqui.</a></li>
+            <li><a href="https://www.bing.com/images/search?q=bougainville+farm&qpvt=bougainville+farm&form=IGRE&first=1" target="_blank">Veja mais fotos clique aqui.</a></li>
+            <li><a href="https://studiotres.com.br/bougainville-farm-guia-fotografico/" target="_blank">Guia fotográfico para casais Bougainville Farm clique aqui.</a></li>
+            <li><a href="#">Aqui entra um texto.</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-col">
+        <h1>Redes Sociais</h1>
+        <ul class="footer-col-social">
+            <li><img src="imagens/twiterR.png" alt="" class="fab">
+                <a href="#">twitter</a></li>
+            <li><img src="imagens/whatsappR.jpg" alt="" class="fab"> <a href="#">whatsapp</a></li>
+            <li><img src="imagens/fecR.jpg" alt="" class="fab"> </img ><a         href="https://www.bing.com/ck/a?!&&p=7bab963c89a2176cJmltdHM9MTY3NDAwMDAwMCZpZ3VpZD0wNDg0NWE5NS0wMDEzLTZlNjYtMTc5Zi00ODAwMDEzZjZmMDcmaW5zaWQ9NTI0NA&ptn=3&hsh=3&fclid=04845a95-0013-6e66-179f-4800013f6f07&psq=bougainville+farm&u=a1aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL0JvdWdhaW52aWxsZS1GYXJtLTM0NTI2MzMxMjM0MDUzMi8&ntb=1" target="_blank">Facebook</a></li>
+            <li><img src="imagens/instaR.jpg" alt="" class="fab"> <a href="https://www.bing.com/ck/a?!&&p=a5e1165fba873bd1JmltdHM9MTY3NDAwMDAwMCZpZ3VpZD0wNDg0NWE5NS0wMDEzLTZlNjYtMTc5Zi00ODAwMDEzZjZmMDcmaW5zaWQ9NTIxMg&ptn=3&hsh=3&fclid=04845a95-0013-6e66-179f-4800013f6f07&psq=bougainville+farm&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9ib3VnYWludmlsbGVmYXJtLw&ntb=1" target="_blank">Instagram</a></li>
+        </ul>
+    </div>
+
+    <div class="row text-center footer-autorais">
+        
+        <p>Todos os Direitos Reservados</p>
+    </div> 
+</div>
+</footer>
+ <!-- start FOOTER-->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
